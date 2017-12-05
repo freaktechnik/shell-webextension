@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "version": "0.0.1",
+    "name": "Sell WebExtension",
+    "content_scripts": [
+        {
+            "all_frames": false,
+            "js": [
+                "content-script.js"
+            ],
+            "match_about_blank": false,
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+    },
+    "permissions": [
+        "storage"
+    ]
+}

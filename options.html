@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf8">
+        <title>Shell WebExtension Options</title>
+    </head>
+    <body>
+        <details>
+            <summary>Content Script</summary>
+            <form id="contentScript">
+                <section>
+                    <label for="cs_run_at">run_at</label>
+                    <select name="run_at" id="cs_run_at" class="browser-style">
+                        <option value="document_start">document_start</option>
+                        <option value="document_end">document_end</option>
+                        <option value="document_idle">document_idle</option>
+                    </select>
+                </section>
+                <section>
+                    <label for="cs_src">Source Code</label>
+                    <textarea id="cs_src" name="src"></textarea>
+                </section>
+                <button type="submit" class="browser-style">Save</button>
+            </form>
+        </details>
+        <script src="options.js"></script>
+    </body>
+</html>
