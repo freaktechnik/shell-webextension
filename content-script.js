@@ -2,7 +2,20 @@
 //TODO matches & match about blank option
 
 const run = (contentScript) => {
-    eval(contentScript.src);
+    try {
+        eval(contentScript.src);
+    }
+    catch(e) {
+        browser.runtime.sendMessage({
+            type: "error",
+            source: "contentScript",
+            error: e
+        });
+    }
+    browser.runtime.sendMessage({
+        type: "load",
+        source: "contentScript"
+    });
 };
 
 const shouldRun = (contentScript) => {

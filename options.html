@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf8">
         <title>Shell WebExtension Options</title>
+        <link rel="stylesheet" href="options.css">
     </head>
     <body>
         <details>
@@ -18,11 +19,34 @@
                 </section>
                 <section>
                     <label for="cs_src">Source Code</label>
-                    <textarea id="cs_src" name="src"></textarea>
+                    <textarea id="cs_src" name="src" cols="100" rows="15" spellcheck="false"></textarea>
+                    <div class="error hidden" data-for="contentScript"></div>
                 </section>
-                <button type="submit" class="browser-style">Save</button>
+                <button type="submit" class="browser-style">Save</button><span class="applied hidden">✓</span>
             </form>
         </details>
+        <details>
+            <summary>Background Page</summary>
+            <form id="background">
+                <section>
+                    <label for="bs_src">Source Code</label>
+                    <textarea id="bs_src" name="src" cols="100" rows="15" spellcheck="false"></textarea>
+                    <div class="error hidden" data-for="background"></div>
+                </section>
+                <button type="submit" class="browser-style">Save</button><span class="applied hidden">✓</span>
+            </form>
+        </details>
+        <!--TODO
+          - protocol handlers (for all allowed protocols)
+          - search engine
+          - homepage
+          - newtab
+          - i18n
+          - devtools_page
+          - browser_action
+          - page_action
+          - sidebar_action
+          -->
         <script src="options.js"></script>
     </body>
 </html>
