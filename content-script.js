@@ -23,9 +23,9 @@ const shouldRun = (contentScript) => {
         case "loading":
             return contentScript.run_at === "document_start";
         case "interactive":
-            return contentScript.run_at === "document_end";
+            return contentScript.run_at === "document_end" || contentScript.run_at === "document_start";
         default:
-            return contentScript.run_at === "document_idle";
+            return true;
     }
 };
 
